@@ -1,0 +1,50 @@
+logger:
+  level: information
+  log: /var/log/clickhouse-server/clickhouse-server.log
+  errorlog: /var/log/clickhouse-server/clickhouse-server.err.log
+  size: 1000M
+  count: 3
+
+display_name: "cluster_2S_2R node 3" # WARN: change it for each node
+
+listen_host: 0.0.0.0
+http_port: 8123
+tcp_port: 9000
+
+user_directories:
+  users_xml:
+    path: users.xml
+  local_directory:
+    path: /var/lib/clickhouse/access/
+
+distributed_ddl:
+  path: /clickhouse/task_queue/ddl
+
+remote_servers:
+  cluster_2S_2R:
+    shard:
+      - internal_replication: true
+        replica:
+          - host: clickhouse-01
+            port: 9000
+          - host: clickhouse-03
+            port: 9000
+      - internal_replication: true
+        replica:
+          - host: clickhouse-02
+            port: 9000
+          - host: clickhouse-04
+            port: 9000
+
+zookeeper:
+  node:
+    - host: clickhouse-keeper-01
+      port: 9181
+    - host: clickhouse-keeper-02
+      port: 9181
+    - host: clickhouse-keeper-03
+      port: 9181
+
+macros: # WARN: change these for each node
+  shard: '01'
+  replica: '02'
