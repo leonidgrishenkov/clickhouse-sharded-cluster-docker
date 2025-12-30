@@ -6,7 +6,7 @@
       <size>1000M</size>
       <count>3</count>
   </logger>
-  <display_name>s1-r2</display_name>
+  <display_name>s3-r1</display_name>
   <listen_host>0.0.0.0</listen_host>
   <http_port>8123</http_port>
   <tcp_port>9000</tcp_port>
@@ -76,8 +76,8 @@
       </node>
   </zookeeper>
   <macros>
-      <shard>shard1</shard>
-      <replica>replica2</replica>
+      <shard>shard3</shard>
+      <replica>replica1</replica>
       <cluster>main</cluster>
   </macros>
 </clickhouse>

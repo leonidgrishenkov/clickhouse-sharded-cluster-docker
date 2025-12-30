@@ -6,7 +6,7 @@
       <size>1000M</size>
       <count>3</count>
   </logger>
-  <display_name>cluster_2S_2R node 1</display_name>
+  <display_name>s1-r1</display_name>
   <listen_host>0.0.0.0</listen_host>
   <http_port>8123</http_port>
   <tcp_port>9000</tcp_port>
@@ -22,7 +22,7 @@
       <path>/clickhouse/task_queue/ddl</path>
   </distributed_ddl>
   <remote_servers>
-      <cluster_2S_2R>
+      <main_cluster>
           <shard>
               <name>shard1</name>
               <internal_replication>true</internal_replication>
@@ -31,7 +31,7 @@
                   <port>9000</port>
               </replica>
               <replica>
-                  <host>clickhouse-03</host>
+                  <host>clickhouse-02</host>
                   <port>9000</port>
               </replica>
           </shard>
@@ -39,7 +39,7 @@
               <name>shard2</name>
               <internal_replication>true</internal_replication>
               <replica>
-                  <host>clickhouse-02</host>
+                  <host>clickhouse-03</host>
                   <port>9000</port>
               </replica>
               <replica>
@@ -47,7 +47,19 @@
                   <port>9000</port>
               </replica>
           </shard>
-      </cluster_2S_2R>
+          <shard>
+              <name>shard3</name>
+              <internal_replication>true</internal_replication>
+              <replica>
+                  <host>clickhouse-05</host>
+                  <port>9000</port>
+              </replica>
+              <replica>
+                  <host>clickhouse-06</host>
+                  <port>9000</port>
+              </replica>
+          </shard>
+      </main_cluster>
   </remote_servers>
   <zookeeper>
       <node>
@@ -64,7 +76,8 @@
       </node>
   </zookeeper>
   <macros>
-      <shard>01</shard>
-      <replica>01</replica>
+      <shard>shard1</shard>
+      <replica>replica1</replica>
+      <cluster>main</cluster>
   </macros>
 </clickhouse>
