@@ -22,7 +22,7 @@
       <path>/clickhouse/task_queue/ddl</path>
   </distributed_ddl>
   <remote_servers>
-      <main_cluster>
+      <main>
           <shard>
               <name>shard1</name>
               <internal_replication>true</internal_replication>
@@ -59,7 +59,7 @@
                   <port>9000</port>
               </replica>
           </shard>
-      </main_cluster>
+      </main>
   </remote_servers>
   <zookeeper>
       <node>
