@@ -22,6 +22,7 @@ services:
       - "8123:8123"
       - "9000:9000"
     depends_on: *depends_on
+    restart: unless-stopped
   clickhouse-02:
     image: *ch_image
     user: *user
@@ -34,6 +35,7 @@ services:
       - "8124:8123"
       - "9001:9000"
     depends_on: *depends_on
+    restart: unless-stopped
   clickhouse-03:
     image: *ch_image
     user: *user
@@ -46,6 +48,7 @@ services:
       - "8125:8123"
       - "9002:9000"
     depends_on: *depends_on
+    restart: unless-stopped
   clickhouse-04:
     image: *ch_image
     user: *user
@@ -84,6 +87,7 @@ services:
       - "8128:8123"
       - "9005:9000"
     depends_on: *depends_on
+    restart: unless-stopped
 
   clickhouse-keeper-01:
     image: *keeper_image
@@ -94,6 +98,7 @@ services:
       - ${PWD}/fs/volumes/clickhouse-keeper-01/etc/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml
     ports:
       - "127.0.0.1:9181:9181"
+    restart: unless-stopped
 
   clickhouse-keeper-02:
     image: *keeper_image
@@ -104,6 +109,7 @@ services:
       - ${PWD}/fs/volumes/clickhouse-keeper-02/etc/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml
     ports:
       - "127.0.0.1:9182:9181"
+    restart: unless-stopped
 
   clickhouse-keeper-03:
     image: *keeper_image
@@ -114,3 +120,4 @@ services:
       - ${PWD}/fs/volumes/clickhouse-keeper-03/etc/clickhouse-keeper/keeper_config.xml:/etc/clickhouse-keeper/keeper_config.xml
     ports:
       - "127.0.0.1:9183:9181"
+    restart: unless-stopped
