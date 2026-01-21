@@ -1,13 +1,13 @@
 x-common:
   user: &user "101:101"
   clickhouse:
-    image: &ch_image "clickhouse/clickhouse-server:25.12.1.649-alpine"
+    image: &ch_image "clickhouse/clickhouse-server:25.12.3.21-alpine"
     depends_on: &depends_on
       - clickhouse-keeper-01
       - clickhouse-keeper-02
       - clickhouse-keeper-03
   keeper:
-    image: &keeper_image "clickhouse/clickhouse-keeper:25.12.1.649-alpine"
+    image: &keeper_image "clickhouse/clickhouse-keeper:25.12.3.21-alpine"
 
 services:
   clickhouse-01:
