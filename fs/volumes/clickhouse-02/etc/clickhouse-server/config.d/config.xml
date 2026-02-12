@@ -79,5 +79,6 @@
       <shard>shard1</shard>
       <replica>replica2</replica>
       <cluster>main</cluster>
+      <replica_broadcast>s1r2</replica_broadcast>
   </macros>
 </clickhouse>

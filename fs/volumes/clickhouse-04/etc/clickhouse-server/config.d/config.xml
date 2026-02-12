@@ -79,5 +79,6 @@
       <shard>shard2</shard>
       <replica>replica2</replica>
       <cluster>main</cluster>
+      <replica_broadcast>s2r2</replica_broadcast>
   </macros>
 </clickhouse>
