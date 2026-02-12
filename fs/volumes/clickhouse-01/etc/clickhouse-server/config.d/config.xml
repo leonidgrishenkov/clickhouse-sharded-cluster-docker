@@ -60,6 +60,32 @@
               </replica>
           </shard>
       </main>
+      <new>
+          <shard>
+              <name>shard1</name>
+              <internal_replication>false</internal_replication>
+              <replica>
+                  <host>clickhouse-01</host>
+                  <port>9000</port>
+              </replica>
+          </shard>
+          <shard>
+              <name>shard2</name>
+              <internal_replication>true</internal_replication>
+              <replica>
+                  <host>clickhouse-03</host>
+                  <port>9000</port>
+              </replica>
+          </shard>
+          <shard>
+              <name>shard3</name>
+              <internal_replication>true</internal_replication>
+              <replica>
+                  <host>clickhouse-05</host>
+                  <port>9000</port>
+              </replica>
+          </shard>
+    </new>
   </remote_servers>
   <zookeeper>
       <node>
