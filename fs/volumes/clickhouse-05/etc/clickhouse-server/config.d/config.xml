@@ -104,6 +104,9 @@
   <macros>
       <shard>shard3</shard>
       <replica>replica1</replica>
-      <cluster>main</cluster>
+        <cluster>main</cluster>
+              <shard_broadcast>s3r1</shard_broadcast>
+      <replica_broadcast>s3r1</replica_broadcast>
+
   </macros>
 </clickhouse>
