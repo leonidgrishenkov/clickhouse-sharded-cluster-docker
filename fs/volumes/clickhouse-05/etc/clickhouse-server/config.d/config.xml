@@ -60,7 +60,7 @@
               </replica>
           </shard>
         </main>
-        <new>
+        <broadcast>
           <shard>
               <name>shard1</name>
               <internal_replication>true</internal_replication>
@@ -85,7 +85,7 @@
                   <port>9000</port>
               </replica>
           </shard>
-    </new>
+        </broadcast>
   </remote_servers>
   <zookeeper>
       <node>
@@ -104,9 +104,8 @@
   <macros>
       <shard>shard3</shard>
       <replica>replica1</replica>
-        <cluster>main</cluster>
-              <shard_broadcast>s3r1</shard_broadcast>
+      <cluster>main</cluster>
+      <shard_broadcast>s3r1</shard_broadcast>
       <replica_broadcast>s3r1</replica_broadcast>
-
   </macros>
 </clickhouse>

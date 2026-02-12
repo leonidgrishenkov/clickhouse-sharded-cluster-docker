@@ -60,7 +60,7 @@
               </replica>
           </shard>
         </main>
-      <new>
+      <broadcast>
           <shard>
               <name>shard1</name>
               <internal_replication>true</internal_replication>
@@ -85,7 +85,7 @@
                   <port>9000</port>
               </replica>
           </shard>
-    </new>
+    </broadcast>
   </remote_servers>
   <zookeeper>
       <node>
